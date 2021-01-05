@@ -19,12 +19,6 @@ public class commitAsync {
         Properties props = new Properties();
         // Kafka集群
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.168.10:9092");
-        // 开启自动提交
-        // 如果设置为false，消费进度在停机后重新开启，offset不会更新，但如果不停机并持续消费，不会有什么影响
-        // 自动提交是基于时间的，开发人员难以把握提交的时机
-        //props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true);
-        // 自动提交延时
-        //props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, 1000);
         // 反序列化
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
